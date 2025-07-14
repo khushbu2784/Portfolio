@@ -24,7 +24,7 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="min-h-screen flex flex-col md:flex-row items-center justify-center px-6 pt-28 pb-16 text-white relative "
+      className="min-h-screen flex flex-col md:flex-row items-center justify-center px-6 pt-28 pb-16 text-white relative"
     >
       {/* Text Content */}
       <motion.div
@@ -37,7 +37,7 @@ const Hero = () => {
           className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight tracking-tight mb-6"
           variants={textVariants}
         >
-          Hello! I'm{" "}
+          Hi, I'm{" "}
           <span className="bg-gradient-to-r from-purple-500 via-pink-400 to-blue-400 bg-clip-text text-transparent">
             Khushbu Parmar
           </span>
@@ -47,8 +47,8 @@ const Hero = () => {
           className="text-lg md:text-xl text-stone-300 leading-relaxed mb-6"
           variants={textVariants}
         >
-          Final year MERN Stack Developer based in Ahmedabad, currently pursuing
-          MSCIT at K.S. School of Business Management.
+          Aspiring Full-Stack Developer passionate about building modern web
+          experiences with the MERN stack.
         </motion.p>
 
         <motion.a
