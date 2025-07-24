@@ -4,8 +4,7 @@ This is my personal portfolio website built using **React.js**, **Vite**, and **
 
 ## 🚀 Live Demo
 
-👉 [View Portfolio](https://your-portfolio.vercel.app)  
-(*Replace with your actual Vercel link*)
+👉 [View Portfolio](https://khushbu-portfolio27.vercel.app/)
 
 ## 🛠️ Tech Stack
 
