@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom font utility class (optional if defined in tailwind.config.js) */
+.font-cursive {
+  font-family: 'Great Vibes', cursive;
+}
+
+:root{
+    font-family: sans-serif;
+    font-optical-sizing: auto;
+    background: #000000;
+    color: #ffffff;
+    scroll-behavior: smooth;
+}
+
+.bg-image{
+    background-image: url('./assets/khushbu1.jpeg');
+    background-size: cover; /* Ensure it covers the container */
+    background-position: center; /* Center the background image */
+    background-repeat: no-repeat; /* Prevent repeat */
+}
+
+#work, #about, #experience, #testimonials, #contact{
+    scroll-margin-top: 80px;
+}
+
+@layer base {
+  @font-face {
+    font-family: 'ClashDisplay';
+    src: url('/fonts/ClashDisplay-Variable.woff2') format('woff2');
+    font-weight: 200 700;
+    font-display: swap;
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: 'ClashDisplay', ui-sans-serif, system-ui;
+  }
+}
