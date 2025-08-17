@@ -6,26 +6,19 @@ import { FaFolderOpen, FaDownload } from "react-icons/fa";
 // Animation variants
 const textVariants = {
   hidden: { opacity: 0, y: 40 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.6, ease: "easeOut" },
-  },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
 };
 
 const containerVariants = {
   hidden: { opacity: 1 },
-  visible: {
-    opacity: 1,
-    transition: { staggerChildren: 0.3 },
-  },
+  visible: { opacity: 1, transition: { staggerChildren: 0.3 } },
 };
 
 const Hero = () => {
   return (
     <section
       id="home"
-      className="min-h-screen flex flex-col md:flex-row items-center justify-center px-6 pt-28 pb-16 text-white relative"
+      className="min-h-screen flex flex-col md:flex-row items-center justify-center px-4 sm:px-6 pt-20 pb-12 text-white relative"
     >
       {/* Text Content */}
       <motion.div
@@ -35,7 +28,7 @@ const Hero = () => {
         variants={containerVariants}
       >
         <motion.h1
-          className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight tracking-tight mb-6"
+          className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-snug sm:leading-tight mb-4 sm:mb-6"
           variants={textVariants}
         >
           Hi, I'm{" "}
@@ -45,7 +38,7 @@ const Hero = () => {
         </motion.h1>
 
         <motion.p
-          className="text-lg md:text-xl text-stone-300 leading-relaxed mb-6"
+          className="text-base sm:text-lg md:text-xl text-stone-300 leading-relaxed sm:leading-relaxed mb-4 sm:mb-6"
           variants={textVariants}
         >
           Aspiring{" "}
@@ -59,31 +52,25 @@ const Hero = () => {
           .
         </motion.p>
 
-        {/* Buttons Row */}
+        {/* Desktop Buttons below text */}
         <motion.div
-          className="flex flex-col sm:flex-row justify-center md:justify-start gap-4 mt-6"
+          className="hidden md:flex flex-row justify-start gap-4 mt-6"
           variants={textVariants}
         >
-          {/* View Projects Button */}
           <motion.a
             href="#project"
-            className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg text-lg font-medium 
-               bg-white/10 text-white border border-white/20 
-               hover:bg-white/20 hover:shadow-md transition-all duration-300"
+            className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg text-lg font-medium bg-white/10 text-white border border-white/20 hover:bg-white/20 hover:shadow-md active:scale-95 transition-all duration-300"
           >
             <FaFolderOpen className="text-xl text-pink-400" />
             View Projects
           </motion.a>
 
-          {/* Download Resume Button */}
           <motion.a
             href={HERO_CONTENT.resumeLink}
             download
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg text-lg font-medium 
-               bg-white/10 text-white border border-white/20 
-               hover:bg-white/20 hover:shadow-md transition-all duration-300"
+            className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg text-lg font-medium bg-white/10 text-white border border-white/20 hover:bg-white/20 hover:shadow-md active:scale-95 transition-all duration-300"
           >
             <FaDownload className="text-xl text-blue-400" />
             {HERO_CONTENT.resumeLinkText}
@@ -91,25 +78,48 @@ const Hero = () => {
         </motion.div>
       </motion.div>
 
-      {/* Image Content */}
+      {/* Image + Mobile Buttons */}
       <motion.div
-        className="w-full md:w-1/2 mt-12 md:mt-0 flex justify-center"
+        className="w-full md:w-1/2 mt-8 md:mt-0 flex flex-col items-center"
         initial={{ opacity: 0, scale: 0.9 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 1, ease: "easeOut" }}
       >
-        <div className="relative group rounded-[32px] p-1 bg-gradient-to-br from-pink-500/40 via-purple-700/30 to-blue-500/30 shadow-2xl overflow-hidden backdrop-blur-md border border-purple-800/20 hover:scale-105 transition-transform duration-500 ease-in-out">
-          <div className="rounded-[28px] overflow-hidden backdrop-blur-lg bg-white/10 border border-white/10">
+        {/* Image */}
+        <div className="relative group rounded-2xl p-1 bg-gradient-to-br from-pink-500/30 via-purple-700/20 to-blue-500/20 shadow-xl overflow-hidden backdrop-blur-md border border-purple-800/20 hover:scale-105 transition-transform duration-500 ease-in-out">
+          <div className="rounded-xl overflow-hidden backdrop-blur-lg bg-white/10 border border-white/10">
             <img
               src={khushbu}
               alt="Khushbu Parmar"
-              className="w-64 h-64 md:w-96 md:h-96 object-cover rounded-[28px] shadow-lg transition-all duration-300 ease-in-out group-hover:scale-[1.03] group-hover:shadow-pink-400/30"
+              className="w-48 h-48 sm:w-56 sm:h-56 md:w-80 md:h-80 object-cover rounded-xl shadow-lg transition-all duration-300 ease-in-out group-hover:scale-105"
             />
           </div>
-          <div className="absolute -bottom-5 right-4 bg-gradient-to-r from-purple-600 to-pink-500 text-white text-xs md:text-sm px-4 py-1 rounded-full shadow-lg tracking-wide animate-pulse">
+          <div className="absolute -bottom-5 right-3 bg-gradient-to-r from-purple-600 to-pink-500 text-white text-xs sm:text-sm px-3 py-1 rounded-full shadow-lg tracking-wide animate-pulse">
             Full-Stack Developer
           </div>
         </div>
+
+        {/* Mobile Buttons below image */}
+        <motion.div className="flex md:hidden justify-center gap-3 mt-4 w-full px-2">
+          <motion.a
+            href="#project"
+            className="flex-1 flex items-center justify-center gap-2 px-3 py-1 rounded-lg text-sm sm:text-base bg-white/10 text-white border border-white/20 hover:bg-white/20 active:scale-95 transition"
+          >
+            <FaFolderOpen className="text-base sm:text-lg text-pink-400" />
+            View Projects
+          </motion.a>
+
+          <motion.a
+            href={HERO_CONTENT.resumeLink}
+            download
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex-1 flex items-center justify-center gap-2 px-3 py-1 rounded-lg text-sm sm:text-base bg-white/10 text-white border border-white/20 hover:bg-white/20 active:scale-95 transition"
+          >
+            <FaDownload className="text-base sm:text-lg text-blue-400" />
+            {HERO_CONTENT.resumeLinkText}
+          </motion.a>
+        </motion.div>
       </motion.div>
     </section>
   );

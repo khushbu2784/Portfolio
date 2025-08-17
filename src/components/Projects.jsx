@@ -68,13 +68,13 @@ const Projects = () => {
               )}
 
               {/* Buttons */}
-              <div className="mt-6 flex gap-3 flex-wrap">
+              <div className="mt-6 flex flex-row gap-3 w-full flex-wrap sm:flex-nowrap">
                 {project.live && (
                   <a
                     href={project.live}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center justify-center gap-2 bg-gradient-to-r from-green-600 to-teal-500 text-white px-5 py-2 rounded-full text-sm font-semibold shadow-md hover:scale-105 hover:shadow-lg transition flex-1"
+                    className="flex-1 min-w-[120px] flex items-center justify-center gap-2 bg-gradient-to-r from-green-600 to-teal-500 text-white px-3 py-2 rounded-full text-sm font-semibold shadow-md hover:scale-105 hover:shadow-lg transition"
                   >
                     <FaExternalLinkAlt className="text-white" />
                     Live Demo
@@ -85,9 +85,7 @@ const Projects = () => {
                     href={project.github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={`flex items-center justify-center gap-2 bg-gradient-to-r from-purple-700 to-pink-500 text-white px-5 py-2 rounded-full text-sm font-semibold shadow-md hover:scale-105 hover:shadow-lg transition ${
-                      !project.live ? "w-full" : "flex-1"
-                    }`}
+                    className="flex-1 min-w-[120px] flex items-center justify-center gap-2 bg-gradient-to-r from-purple-700 to-pink-500 text-white px-3 py-2 rounded-full text-sm font-semibold shadow-md hover:scale-105 hover:shadow-lg transition"
                   >
                     <FaGithub className="text-white" />
                     Source Code
